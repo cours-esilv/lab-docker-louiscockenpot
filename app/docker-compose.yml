@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  backend:
+    image: louiscockenpot/mlopsback:1.0
+    ports:
+      - "5000:5000"
+    environment:
+      - CURRENT_ENVIRONMENT=development
+    container_name: mlopsback
+
+  frontend:
+    image: louiscockenpot/mlopsfront:1.0
+    ports:
+      - "8080:80"
+    environment:
+      - WS_BACK_URL=http://localhost:5000
+    container_name: mlopsfront
