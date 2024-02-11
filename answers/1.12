@@ -1,0 +1,1 @@
+docker run -d --name mlops-front -p 8080:80 -e WS_BACK_URL=http://localhost:5000 louiscockenpot/mlopsfront:1.0
